@@ -1,13 +1,10 @@
-# run this file at the command line: rspec blog_post_scheduler_spec.rb
-
 # remember that tests can be your to-do list, and that you should get one
 # test to pass at a time, doing the simplest thing you can for each one.
 
 # read your rspec output carefully to find what you need to fix. the errors
 # will guide you!
 
-require_relative './spec_helper.rb'
-require_relative './blog_post_scheduler.rb'
+require 'spec_helper.rb'
 
 describe "Blog Post Scheduler" do
 
