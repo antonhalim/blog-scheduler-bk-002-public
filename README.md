@@ -1,7 +1,7 @@
 ---
   tags: tdd
   languages: ruby
-  resources: 1
+  resources: 2
 ---
 
 # Blog Scheduler
