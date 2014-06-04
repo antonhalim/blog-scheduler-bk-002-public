@@ -1,5 +1,5 @@
 ---
-  tags: tdd
+  tags: tdd, arrays, iteration
   languages: ruby
   resources: 2
 ---
