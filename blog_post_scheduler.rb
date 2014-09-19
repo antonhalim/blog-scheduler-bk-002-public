@@ -1,1 +1,3 @@
-# Code goes here
+def create_groups
+  # code goes here
+end
