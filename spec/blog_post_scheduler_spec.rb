@@ -1,9 +1,3 @@
-# remember that tests can be your to-do list, and that you should get one
-# test to pass at a time, doing the simplest thing you can for each one.
-
-# read your rspec output carefully to find what you need to fix. the errors
-# will guide you!
-
 describe "Blog Post Scheduler" do
 
   describe "#create_groups" do
@@ -27,22 +21,17 @@ describe "Blog Post Scheduler" do
     end
 
     it "creates the right number of groups" do
-      # pending "implement a test that ensures you get the right number of groups returned"
-      expect(create_groups(students, group_size, 20).count).to eq(20)
+      pending "implement a test that ensures you get the right number of groups returned"
     end
 
     it "uses every student in the list for a large enough number of groups" do
       groups = create_groups(students, group_size, 11)
-      # puts groups.inspect
       expect(students.sort).to eq(groups.flatten.uniq.sort)
     end
 
     it "attempts to randomize the list" do
-      #pending "implement a test that ensures that the list order returned is different from the student list"
+      pending "implement a test that ensures that the list order returned is different from the student list"
       #hint: look at the test: 'it uses every student in the list...'
-      groups = create_groups(students, group_size, 11)
-      # puts groups.inspect
-      expect(students.sort).to_not eq(groups.flatten)      
     end
 
     it "uses some studens more than once for a large enough number of groups" do
@@ -68,7 +57,7 @@ describe "Blog Post Scheduler" do
         # This single line test is the equivalent of doing:
 
         #group.each do |g|
-          #groups[i+1].include?(g).should be_false if i < groups.size - 1
+          #groups[i+1].include?(g)).to be_false if i < groups.size - 1
         #end
       end
     end
