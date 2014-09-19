@@ -4,8 +4,6 @@
 # read your rspec output carefully to find what you need to fix. the errors
 # will guide you!
 
-require 'spec_helper.rb'
-
 describe "Blog Post Scheduler" do
 
   describe "#create_groups" do
@@ -21,38 +19,43 @@ describe "Blog Post Scheduler" do
     let (:students) { get_students } 
 
     it "returns an array of groups" do
-      create_groups(students, group_size, 20).class.should eq(Array)
+      expect(create_groups(students, group_size, 20).class).to eq(Array)
     end
 
     it "sets group sizes to the size given" do
-      create_groups(students, group_size, 20).first.size.should eq(group_size)
+      expect(create_groups(students, group_size, 20).first.size).to eq(group_size)
     end
 
     it "creates the right number of groups" do
-      pending "implement a test that ensures you get the right number of groups returned"
+      # pending "implement a test that ensures you get the right number of groups returned"
+      expect(create_groups(students, group_size, 20).count).to eq(20)
     end
 
     it "uses every student in the list for a large enough number of groups" do
       groups = create_groups(students, group_size, 11)
-      students.sort.should eq(groups.flatten.uniq.sort)
+      # puts groups.inspect
+      expect(students.sort).to eq(groups.flatten.uniq.sort)
     end
 
     it "attempts to randomize the list" do
-      pending "implement a test that ensures that the list order returned is different from the student list"
+      #pending "implement a test that ensures that the list order returned is different from the student list"
       #hint: look at the test: 'it uses every student in the list...'
+      groups = create_groups(students, group_size, 11)
+      # puts groups.inspect
+      expect(students.sort).to_not eq(groups.flatten)      
     end
 
     it "uses some studens more than once for a large enough number of groups" do
        groups = create_groups(students, group_size, 1000)
        groups.each do |group|
-         group.size.should eq(group_size)
+         expect(group.size).to eq(group_size)
        end
     end
 
     it "doesn't repeat students on adjacent days" do
       groups = create_groups(students, group_size, 20)
       groups.each_with_index do |group, i|
-        (group & groups[i+1]).should eq([]) if i < groups.size - 1
+        expect((group & groups[i+1])).to eq([]) if i < groups.size - 1
 
         # the bitwise & (not &&) operator creates an array that
         # is the intersection of two arrays, meaning the common
