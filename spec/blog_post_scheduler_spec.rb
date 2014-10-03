@@ -26,7 +26,7 @@ describe "Blog Post Scheduler" do
 
     it "uses every student in the list for a large enough number of groups" do
       groups = create_groups(students, group_size, 11)
-      expect(students.sort).to eq(groups.flatten.uniq.sort)
+      expect(groups.flatten.uniq.sort).to eq(students.sort)
     end
 
     it "attempts to randomize the list" do
@@ -34,7 +34,7 @@ describe "Blog Post Scheduler" do
       #hint: look at the test: 'it uses every student in the list...'
     end
 
-    it "uses some studens more than once for a large enough number of groups" do
+    it "uses some students more than once for a large enough number of groups" do
        groups = create_groups(students, group_size, 1000)
        groups.each do |group|
          expect(group.size).to eq(group_size)
