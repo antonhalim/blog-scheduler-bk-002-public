@@ -6,6 +6,15 @@
 
 # Blog Scheduler
 
+## Contents
+
+|Section                                       |
+|----------------------------------------------|
+|[Background](#background)                     |
+|[Intro to Examples](#introduction-to-examples)|
+|[Simple Example](#simple-example)             |
+|[Complex Example](#complex-example)           |
+
 ## Background
 
 At Flatiron, when we create the blog post schedule, we don't like to make students present their blog on consecutive days, because we know that any good post takes some time to write.
@@ -32,10 +41,14 @@ This program should be able to take an array of student names, a desired group s
   * Basil, Myron, and John are in a group together
   * etc.
 
+
+## Introduction to Examples
+
 For instance, say you're scheduling speakers for a conference on the economy. The conference lasts four days and you want to have two economists talk on a day. That means the group size would be two, the total number of speakers per day, while the total number of groups would be four, the total number of days to fill.
 
+For the examples below, `economists` will be pointing to the array below;
 ```ruby
-economists = [
+[
   "Thomas Piketty", 
   "Arthur Goldhammer", 
   "Edith Abbott",
@@ -45,7 +58,11 @@ economists = [
   "Raúl Prebisch",
   "Zhou Xiaochuan"
 ]
+```
 
+### Simple Example
+
+```ruby
 num_of_speakers_a_day = 2
 num_of_days = 4
 
@@ -68,22 +85,15 @@ result.collect {|group| group.length == 2}
 
 Easy, right?
 
-However, things could get more complicated. For instance, say your conference now lasts five days. You haven't been able to get any other economists to speak, but you want three speakers a day. Well, now you'll have to repeat speakers.
+### Complex Example
+
+Things can get more complicated. For instance, say your conference now lasts five days. You haven't been able to get any other economists to speak, but you want three speakers a day. Well, now you'll have to repeat speakers.
 
 You know that economists don't like speaking two days in a row because they need at least a full day to prepare for a talk. Well, you should be able to call on your program like
 
-```ruby
-economists = [
-  "Thomas Piketty", 
-  "Arthur Goldhammer", 
-  "Edith Abbott",
-  "Ungku Abdul Aziz",
-  "Francine D. Blau",
-  "János Kornai",
-  "Raúl Prebisch",
-  "Zhou Xiaochuan"
-]
+Second example:
 
+```ruby
 num_of_speakers_a_day = 3
 num_of_days = 5
 
@@ -91,18 +101,18 @@ result = create_groups(economists, num_of_speakers_a_day, num_of_days)
 
 # =>
 # [
-#   ["Thomas Piketty", "Edith Abbott", "Arthur Goldhammer"],
-#   ["Ungku Abdul Aziz", "Francine D. Blau", "János Kornai"]
-#   
-#   ["Francine D. Blau","János Kornai"],
-#   ["Raúl Prebisch", "Zhou Xiaochuan"]
+#   ["Arthur Goldhammer", "János Kornai",     "Ungku Abdul Aziz" ], 
+#   ["Raúl Prebisch",     "Zhou Xiaochuan",   "Thomas Piketty"   ], 
+#   ["Francine D. Blau",  "Edith Abbott",     "Arthur Goldhammer"], 
+#   ["János Kornai",      "Ungku Abdul Aziz", "Raúl Prebisch"    ], 
+#   ["Zhou Xiaochuan",    "Thomas Piketty",   "Francine D. Blau" ]
 # ]
 
 result.length == 5
 # => true
 
 result.collect { |group| group.length == 3 }
-# => [true, true, true, true]
+# => [true, true, true, true, true]
 ```
 
 ## Instructions
