@@ -9,8 +9,11 @@ describe "Blog Post Scheduler" do
     # subjects for your tests.
 
     # tl;dr - you call group_size in your test, it returns 4
+    #       - you call students in your test, it returns an array of strings:
+    #         ["Justin  Belmont", "Sushanth  Bhaskarabhatla"...]
+    
     let (:group_size) { 4 } 
-    let (:students) { get_students } 
+    let (:students) { YAML.load_file('spec/support/students.yml') } 
 
     it "returns an array of groups" do
       expect(create_groups(students, group_size, 20).class).to eq(Array)
@@ -62,48 +65,4 @@ describe "Blog Post Scheduler" do
       end
     end
   end
-end
-
-def get_students
-  [
-    "Justin  Belmont",
-    "Sushanth  Bhaskarabhatla",
-    "Ariel Caplan",
-    "Stephanie Chandra",
-    "Kevin Chang",
-    "Laura Conwill",
-    "Morgan  Evans",
-    "Daniel  Fenjves",
-    "Christopher Guthrie",
-    "Dennis  Heihoff",
-    "Emma  Ife",
-    "Miriam  Jaffe",
-    "William Jeffries",
-    "Jisu  Kim",
-    "Christopher Kohlbrenner",
-    "Daniel  Kronovet",
-    "Boyoung Kwon",
-    "Shira Lazarus",
-    "Mike  Lerner",
-    "Magdalena Lipinska",
-    "George  Mayer",
-    "Alisha  McWilliams",
-    "Eugene  Millerman",
-    "Prashant  Mukhopadhyay",
-    "Corbin  Page",
-    "Alex  Patriquin",
-    "Eric  Peterson",
-    "Brian Pisano",
-    "Michael Prouty",
-    "Sam Schlinkert",
-    "Tristan Siegel",
-    "Joan  Soskin",
-    "Daniel  Spector",
-    "Arielle Sullivan",
-    "Thomas  Surgent",
-    "Pat Whitrock",
-    "Alex  Wilkinson",
-    "Wontae  Yang",
-    "Sunwoo  Yang"
-  ]
 end
