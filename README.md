@@ -67,7 +67,6 @@ num_of_speakers_a_day = 2
 num_of_days = 4
 
 result = create_groups(economists, num_of_speakers_a_day, num_of_days)
-
 # =>
 # [
 #   ["Thomas Piketty",   "Arthur Goldhammer"],
@@ -98,7 +97,6 @@ num_of_speakers_a_day = 3
 num_of_days = 5
 
 result = create_groups(economists, num_of_speakers_a_day, num_of_days)
-
 # =>
 # [
 #   ["Arthur Goldhammer", "János Kornai",     "Ungku Abdul Aziz" ], 
