@@ -1,4 +1,4 @@
-require_relative '../blog_post_scheduler.rb'
+require_relative '../lib/blog_post_scheduler.rb'
 require 'yaml'
 require 'pry'
 RSpec.configure do |config|
