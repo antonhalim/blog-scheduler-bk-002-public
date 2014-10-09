@@ -13,15 +13,15 @@ describe "Blog Post Scheduler" do
     #         ["Justin  Belmont", "Sushanth  Bhaskarabhatla"...]
     
     let(:group_size) { 4 } 
-    let(:total_days) { 20 }
+    let(:twenty_days) { 20 }
     let(:students)   { YAML.load_file('spec/support/students.yml') } 
 
     it "returns an array of groups" do
-      expect(create_groups(students, group_size, total_days).class).to eq(Array)
+      expect(create_groups(students, group_size, twenty_days).class).to eq(Array)
     end
 
     it "sets group sizes to the size given" do
-      expect(create_groups(students, group_size, total_days).first.size).to eq(group_size)
+      expect(create_groups(students, group_size, twenty_days).first.size).to eq(group_size)
     end
 
     it "creates the right number of groups" do
@@ -48,7 +48,7 @@ describe "Blog Post Scheduler" do
     end
 
     it "doesn't repeat students on adjacent days" do
-      groups = create_groups(students, group_size, total_days)
+      groups = create_groups(students, group_size, twenty_days)
       groups.each_with_index do |group, i|
         expect((group & groups[i+1])).to eq([]) if i < groups.size - 1
       end
