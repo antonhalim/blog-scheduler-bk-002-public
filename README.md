@@ -49,8 +49,6 @@ This program should be able to take an array of student names, a desired group s
 
 ## Introduction to Examples
 
-For instance, say you're scheduling speakers for a conference on the economy. The conference lasts four days and you want to have two economists talk on a day. That means the group size would be two, the total number of speakers per day, while the total number of groups would be four, the total number of days to fill.
-
 For the examples below, `economists` will be pointing to the array below;
 ```ruby
 [
@@ -66,6 +64,8 @@ For the examples below, `economists` will be pointing to the array below;
 ```
 
 ### Simple Example
+
+For instance, say you're scheduling speakers for a conference on the economy. The conference lasts four days and you want to have two economists talk on a day. That means the group size would be two, the total number of speakers per day, while the total number of groups would be four, the total number of days to fill.
 
 ```ruby
 num_of_speakers_a_day = 2
