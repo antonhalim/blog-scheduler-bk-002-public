@@ -135,7 +135,7 @@ fruits = ["apple", "banana", "carrot", "durian"]
 # => ["apple", "banana", "carrot", "durian"]
 
 fruits.shuffle
-=> ["carrot", "durian", "banana", "apple"]
+# => ["carrot", "durian", "banana", "apple"]
 ```
 
 More info [here](http://www.ruby-doc.org/core-2.1.3/Array.html#method-i-shuffle).
@@ -151,7 +151,7 @@ five_two_element_arrays = Array.new(5, Array.new(2))
 #   [nil, nil],
 #   [nil, nil],
 #   [nil, nil]
-#   ]
+# ]
 
 two_five_element_arrays = Array.new(2, Array.new(5))
 # => 
