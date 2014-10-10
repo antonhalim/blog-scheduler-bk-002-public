@@ -208,6 +208,7 @@ Remember to return `final_groups`. Good luck!
 Think of a way to accomplish this task in one line.
 
 ## Resources
+
 * [Ruby Docs](http://www.ruby-doc.org/) - [Array Documentation](http://www.ruby-doc.org/core-2.1.1/Array.html)
 * [A Blog About Code](http://ablogaboutcode.com/) - [The & Operator in Ruby](http://ablogaboutcode.com/2012/01/04/the-ampersand-operator-in-ruby/)
 * [About.com](http://ruby.about.com/) - [Two Dimensional Arrays in Ruby](http://ruby.about.com/od/Writing-a-2048-Clone-in-Ruby/fl/Two-Dimensional-Arrays-in-Ruby.htm)
