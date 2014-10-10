@@ -18,6 +18,7 @@ resources: 4
 |[Things to Keep in Mind](#things-to-keep-in-mind)|
 |[Hints](#hints)                                  |
 |[Bonus](#bonus)                                  |
+|[Resources](#resources)                          |
 
 ## Background
 
@@ -130,7 +131,7 @@ result.collect { |group| group.length == 3 }
 
 #### Shuffle
 
-The shuffle method resorts elements in an array in a random order.
+The shuffle method arranges elements in an array in random order.
 
 ```ruby
 fruits = ["apple", "banana", "carrot", "durian"]
