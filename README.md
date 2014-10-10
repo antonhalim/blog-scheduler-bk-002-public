@@ -1,19 +1,21 @@
 ---
-  tags: tdd, arrays, iteration
-  languages: ruby
-  resources: 2
+tags: tdd, arrays, iteration
+languages: ruby
+resources: 4
 ---
 
 # Blog Scheduler
 
 ## Contents
 
-|Section                                       |
-|----------------------------------------------|
-|[Background](#background)                     |
-|[Intro to Examples](#introduction-to-examples)|
-|[Simple Example](#simple-example)             |
-|[Complex Example](#complex-example)           |
+|Section                                          |
+|-------------------------------------------------|
+|[Background](#background)                        |
+|[Intro to Examples](#introduction-to-examples)   |
+|[Simple Example](#simple-example)                |
+|[Complex Example](#complex-example)              |
+|[Instructions](#instructions)                    |
+|[Things to Keep in Mind](#things-to-keep-in-mind)|
 
 ## Background
 
@@ -121,6 +123,48 @@ result.collect { |group| group.length == 3 }
   * Total number of blog-post presentation days
 * This method should return an array of groups of of students with no student in adjacent groups.
 
+
+## Things to Keep in Mind
+
+#### Shuffle
+
+The shuffle method resorts elements in an array in a random order.
+
+```ruby
+fruits = ["apple", "banana", "carrot", "durian"]
+# => ["apple", "banana", "carrot", "durian"]
+
+fruits.shuffle
+=> ["carrot", "durian", "banana", "apple"]
+```
+
+More info [here](http://www.ruby-doc.org/core-2.1.3/Array.html#method-i-shuffle).
+
+#### Creating Multidimensional Arrays
+
+```ruby
+five_two_element_arrays = Array.new(5, Array.new(2))
+# => 
+# [
+#   [nil, nil],
+#   [nil, nil],
+#   [nil, nil],
+#   [nil, nil],
+#   [nil, nil]
+#   ]
+
+two_five_element_arrays = Array.new(2, Array.new(5))
+# => 
+# [
+#   [nil, nil, nil, nil, nil], 
+#   [nil, nil, nil, nil, nil]
+# ]
+```
+
+More info [here](http://ruby.about.com/od/Writing-a-2048-Clone-in-Ruby/fl/Two-Dimensional-Arrays-in-Ruby.htm).
+
 ## Resources
 * [Ruby Docs](http://www.ruby-doc.org/) - [Array Documentation](http://www.ruby-doc.org/core-2.1.1/Array.html)
 * [A Blog About Code](http://ablogaboutcode.com/) - [The & Operator in Ruby](http://ablogaboutcode.com/2012/01/04/the-ampersand-operator-in-ruby/)
+* [About.com](http://ruby.about.com/) - [Two Dimensional Arrays in Ruby](http://ruby.about.com/od/Writing-a-2048-Clone-in-Ruby/fl/Two-Dimensional-Arrays-in-Ruby.htm)
+* [Ruby Docs](http://www.ruby-doc.org/) - [Shuffle Method](http://www.ruby-doc.org/core-2.1.3/Array.html#method-i-shuffle)
