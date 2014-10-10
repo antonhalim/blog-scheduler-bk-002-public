@@ -16,6 +16,8 @@ resources: 4
 |[Complex Example](#complex-example)              |
 |[Instructions](#instructions)                    |
 |[Things to Keep in Mind](#things-to-keep-in-mind)|
+|[Hints](#hints)                                  |
+|[Bonus](#bonus)                                  |
 
 ## Background
 
@@ -163,7 +165,7 @@ two_five_element_arrays = Array.new(2, Array.new(5))
 
 More info [here](http://ruby.about.com/od/Writing-a-2048-Clone-in-Ruby/fl/Two-Dimensional-Arrays-in-Ruby.htm).
 
-#### Thought Process
+## Hints
 
 It might be helpful to think about shuffling the students:
 
@@ -171,13 +173,13 @@ It might be helpful to think about shuffling the students:
 randomized_students = student_list.shuffle
 ```
 
-Then you could make a container for all the groups:
+Then you could make a container for all the final groups:
 
 ```ruby
 final_groups = []
 ```
 
-In the next step you could set a counter, which will keep track of which student was last added to a group. We'll initially set it equal to `0`, max equal to `student_list.length - 1`:
+In the next step you could set a counter, which will keep track of which student is the next to get added to a group. Initially set it equal to `0`, max equal to `student_list.length - 1`:
 
 ```ruby
 counter = 0
@@ -190,7 +192,7 @@ Finally, make a new array for each day and within the creation of these arrays, 
 number of total days do this:
   create a new empty array called group
   number of group members to this:
-    shovel randomized_students[counter] into the group array above
+    shovel a student, found by calling the index `counter` on randomized_students, into the group array
     increment counter by one, or reset it to 0 if it will exceed max
   end
   shovel the group array into the final group array
@@ -198,6 +200,11 @@ end
 
 ```
 
+Remember to return `final_groups`. Good luck!
+
+## Bonus
+
+Think of a way to accomplish this task in one line.
 
 ## Resources
 * [Ruby Docs](http://www.ruby-doc.org/) - [Array Documentation](http://www.ruby-doc.org/core-2.1.1/Array.html)
