@@ -3,18 +3,18 @@ describe "Blog Post Scheduler" do
   describe "#create_groups" do
     # A bit about this let method below (http://betterspecs.org/#let)
     # `let` will create a method named after the argument
-    # that will execute the associated block every time 
+    # that will execute the associated block every time
     # it is called. It is a semantic way to define
     # subjects for your tests.
 
     # tl;dr - you call group_size in your test, it returns 4
-    #       - you call tota_days in your test, it returns 20    
+    #       - you call tota_days in your test, it returns 20
     #       - you call students in your test, it returns an array of strings:
     #         ["Justin  Belmont", "Sushanth  Bhaskarabhatla"...]
-    
-    let(:group_size) { 4 } 
+
+    let(:group_size) { 4 }
     let(:twenty_days) { 20 }
-    let(:students)   { YAML.load_file('spec/support/students.yml') } 
+    let(:students)   { YAML.load_file('spec/support/students.yml') }
 
     it "returns an array of groups" do
       expect(create_groups(students, group_size, twenty_days).class).to eq(Array)
@@ -25,7 +25,7 @@ describe "Blog Post Scheduler" do
     end
 
     it "creates the right number of groups" do
-      pending "implement a test that ensures you get the right number of groups returned"
+      expect(create_groups(students, group_size, twenty_days).size).to eq(twenty_days)
     end
 
     it "uses every student in the list for a large enough number of groups" do
@@ -35,8 +35,7 @@ describe "Blog Post Scheduler" do
     end
 
     it "attempts to randomize the list" do
-      pending "implement a test that ensures that the list order returned is different from the student list"
-      # hint: look at the test: 'it uses every student in the list...'
+        expect(create_groups(students, group_size, twenty_days)).not_to eq(students)
     end
 
     it "uses some students more than once for a large enough number of groups" do
